@@ -100,14 +100,18 @@ Address 0x00, bit 0x80 is the clock-halt (CH) bit. When set to 1, the
 oscillator is disabled; when 0, enabled.
 
 Address 0x07 is the control/status byte:
+
 * 0x01 and 0x02 are rate-select (RS0 and RS1):
+
   * 0, 0: 1Hz
   * 0, 1: 4096Hz
   * 1, 0: 8192Hz
   * 1, 1: 32768Hz
+
 * 0x10 is square-wave enable (SQWE). If 1, the oscillator output is
   enabled, and the frequency output on the SQW/OUT pin is determined
   by RS0 and RS1.
+
 * 0x80 is output control (OUT). When SQWE is disabled, the value of out
   determines the logic level of the SQW/OUT pin (1=high, 0=low).
 
@@ -119,6 +123,7 @@ DS3231 (and DS3231M)
 [DS3231M Datasheet](http://datasheets.maxim-ic.com/en/ds/DS3231M.pdf)
 
 Lots and lots of extra stuff. Will fill in later, but basically:
+
 * two alarms
 * detailed control/status bits
 * aging offset
