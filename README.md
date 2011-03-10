@@ -35,6 +35,7 @@ output.
 RTC Chips
 -------------
 Applies to:
+
 - DS1307
 - DS1337, DS1337C
 - DS1338, DS1338Z
@@ -50,6 +51,7 @@ Applies to:
 - DS32B35, DS32C35
 
 Addresses 0x00 through 0x06 store the current time in BCD format:
+
 0. 7-bit seconds
 1. 7-bit minutes
 2. 6-bit hour, or 5-bit hour and 1-bit AM/PM, followed by 1-bit 12/24
@@ -71,6 +73,7 @@ additional toggles on some chips.
 Elapsed Time Chips
 ----------------------
 Applies to:
+
 - DS1371
 - DS1372
 - DS1374, DS1374U
