@@ -42,7 +42,7 @@ Addresses 0x00 through 0x06 store the current time in BCD format:
 
 The DS1307, DS1338, DS1340, DS1388, and DS1678 do not support CENT.
 
-These registeres shift up one byte on the DS1388; address 0x00 contains
+These registers shift up one byte on the DS1388; address 0x00 contains
 hundredths of seconds in addition to the rest.
 
 All chips have a control/status register (or registers), but the address
