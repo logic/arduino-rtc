@@ -1,0 +1,355 @@
+<!DOCTYPEhtml>
+<html>
+  <head>
+    <title>Timekeeping Registers</title>
+  </head>
+  <body>
+
+<h1>Timekeeping Registers</h1>
+
+<h2>DS1307</h2>
+<p><a href="http://datasheets.maxim-ic.com/en/ds/DS1307.pdf">Datasheet</a></p>
+
+<tableborder="1"class="docutils">
+<colgroup>
+<colwidth="10%">
+<colwidth="8%">
+<colwidth="8%">
+<colwidth="9%">
+<colwidth="10%">
+<colwidth="8%">
+<colwidth="9%">
+<colwidth="8%">
+<colwidth="8%">
+<colwidth="12%">
+<colwidth="8%">
+</colgroup>
+<theadvalign="bottom"><tr>
+<thclass="head">ADDRESS</th>
+<thclass="head">BIT7</th>
+<thclass="head">BIT6</th>
+<thclass="head">BIT5</th>
+<thclass="head">BIT4</th>
+<thclass="head">BIT3</th>
+<thclass="head">BIT2</th>
+<thclass="head">BIT1</th>
+<thclass="head">BIT0</th>
+<thclass="head">FUNCTION</th>
+<thclass="head">RANGE</th>
+</tr></thead>
+<tbodyvalign="top">
+<tr>
+<td>00h</td>
+<td>CH</td>
+<tdcolspan="3">10Seconds</td>
+<tdcolspan="4">Seconds</td>
+<td>Seconds</td>
+<td>00–59</td>
+</tr>
+<tr>
+<td>01h</td>
+<td>0</td>
+<tdcolspan="3">10Minutes</td>
+<tdcolspan="4">Minutes</td>
+<td>Minutes</td>
+<td>00–59</td>
+</tr>
+<tr>
+<tdrowspan="2">02h</td>
+<tdrowspan="2">0</td>
+<td>12</td>
+<td>10Hr</td>
+<tdrowspan="2">10Hour</td>
+<tdcolspan="4"rowspan="2">Hours</td>
+<tdrowspan="2">Hours</td>
+<tdrowspan="2">1-12
++AM/PM
+00-23</td>
+</tr>
+<tr>
+<td>24</td>
+<td>PM/AM</td>
+</tr>
+<tr>
+<td>03h</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<tdcolspan="3">Day</td>
+<td>Day</td>
+<td>01–07</td>
+</tr>
+<tr>
+<td>04h</td>
+<td>0</td>
+<td>0</td>
+<tdcolspan="2">10Date</td>
+<tdcolspan="4">Date</td>
+<td>Date</td>
+<td>01–31</td>
+</tr>
+<tr>
+<td>05h</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>10Month</td>
+<tdcolspan="4">Month</td>
+<td>Month</td>
+<td>01-12</td>
+</tr>
+<tr>
+<td>06h</td>
+<tdcolspan="4">10Year</td>
+<tdcolspan="4">Year</td>
+<td>Year</td>
+<td>00–99</td>
+</tr>
+<tr>
+<td>07h</td>
+<td>OUT</td>
+<td>0</td>
+<td>0</td>
+<td>SQWE</td>
+<td>0</td>
+<td>0</td>
+<td>RS1</td>
+<td>RS0</td>
+<td>Control</td>
+<td>—</td>
+</tr>
+<tr>
+<td>08h–3Fh</td>
+<tdcolspan="8"></td>
+<td>RAM56x8</td>
+<td>00h-FFh</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>DS1337</h2>
+
+<p><a href="http://datasheets.maxim-ic.com/en/ds/DS1337-DS1337C.pdf">Datasheet</a></p>
+
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%">
+<col width="8%">
+<col width="8%">
+<col width="9%">
+<col width="10%">
+<col width="8%">
+<col width="9%">
+<col width="8%">
+<col width="8%">
+<col width="16%">
+<col width="8%">
+</colgroup>
+<thead valign="bottom"><tr>
+<th class="head">ADDRESS</th>
+<th class="head">BIT 7</th>
+<th class="head">BIT 6</th>
+<th class="head">BIT 5</th>
+<th class="head">BIT 4</th>
+<th class="head">BIT 3</th>
+<th class="head">BIT 2</th>
+<th class="head">BIT 1</th>
+<th class="head">BIT 0</th>
+<th class="head">FUNCTION</th>
+<th class="head">RANGE</th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>00h</td>
+<td>0</td>
+<td colspan="3">10 Seconds</td>
+<td colspan="4">Seconds</td>
+<td>Seconds</td>
+<td>00–59</td>
+</tr>
+<tr>
+<td>01h</td>
+<td>0</td>
+<td colspan="3">10 Minutes</td>
+<td colspan="4">Minutes</td>
+<td>Minutes</td>
+<td>00–59</td>
+</tr>
+<tr>
+<td rowspan="2">02h</td>
+<td rowspan="2">0</td>
+<td rowspan="2">12/24</td>
+<td>
+<em>AM</em>/PM</td>
+<td rowspan="2">10 Hour</td>
+<td colspan="4" rowspan="2">Hours</td>
+<td rowspan="2">Hours</td>
+<td rowspan="2">1-12
++AM/PM
+00-23</td>
+</tr>
+<tr>
+<td>10 Hour</td>
+</tr>
+<tr>
+<td>03h</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td colspan="3">Day</td>
+<td>Day</td>
+<td>01–07</td>
+</tr>
+<tr>
+<td>04h</td>
+<td>0</td>
+<td>0</td>
+<td colspan="2">10 Date</td>
+<td colspan="4">Date</td>
+<td>Date</td>
+<td>01–31</td>
+</tr>
+<tr>
+<td>05h</td>
+<td>Century</td>
+<td>0</td>
+<td>0</td>
+<td>10 Month</td>
+<td colspan="4">Month</td>
+<td>Month/Century</td>
+<td>01-12</td>
+</tr>
+<tr>
+<td>06h</td>
+<td colspan="4">10 Year</td>
+<td colspan="4">Year</td>
+<td>Year</td>
+<td>00–99</td>
+</tr>
+<tr>
+<td>07h</td>
+<td>A1M1</td>
+<td colspan="3">10 Seconds</td>
+<td colspan="4">Seconds</td>
+<td>Alarm 1 Seconds</td>
+<td>00–59</td>
+</tr>
+<tr>
+<td>08h</td>
+<td>A1M2</td>
+<td colspan="3">10 Minutes</td>
+<td colspan="4">Minutes</td>
+<td>Alarm 1 Minutes</td>
+<td>00–59</td>
+</tr>
+<tr>
+<td rowspan="2">09h</td>
+<td rowspan="2">A1M3</td>
+<td rowspan="2">12/24</td>
+<td>
+<em>AM</em>/PM</td>
+<td rowspan="2">10 Hour</td>
+<td colspan="4" rowspan="2">Hours</td>
+<td rowspan="2">Alarm 1 Hours</td>
+<td rowspan="2">1-12
++AM/PM
+00-23</td>
+</tr>
+<tr>
+<td>10 Hour</td>
+</tr>
+<tr>
+<td rowspan="2">0Ah</td>
+<td rowspan="2">A1M4</td>
+<td rowspan="2">DY/<em>DT</em>
+</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td colspan="3">Day</td>
+<td>Alarm 1 Day</td>
+<td>1–7</td>
+</tr>
+<tr>
+<td colspan="3">Date</td>
+<td>Alarm 1 Date</td>
+<td>01-31</td>
+</tr>
+<tr>
+<td>0Bh</td>
+<td>A2M2</td>
+<td colspan="3">10 Minutes</td>
+<td colspan="4">Minutes</td>
+<td>Alarm 2 Minutes</td>
+<td>00–59</td>
+</tr>
+<tr>
+<td rowspan="2">0Ch</td>
+<td rowspan="2">A2M3</td>
+<td rowspan="2">12/24</td>
+<td>
+<em>AM</em>/PM</td>
+<td rowspan="2">10 Hour</td>
+<td colspan="4" rowspan="2">Hours</td>
+<td rowspan="2">Alarm 2 Hours</td>
+<td rowspan="2">1-12
++AM/PM
+00-23</td>
+</tr>
+<tr>
+<td>10 Hour</td>
+</tr>
+<tr>
+<td rowspan="2">0Dh</td>
+<td rowspan="2">A2M4</td>
+<td rowspan="2">DY/<em>DT</em>
+</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td rowspan="2">0</td>
+<td colspan="3">Day</td>
+<td>Alarm 2 Day</td>
+<td>1–7</td>
+</tr>
+<tr>
+<td colspan="3">Date</td>
+<td>Alarm 2 Date</td>
+<td>01-31</td>
+</tr>
+<tr>
+<td>0Eh</td>
+<td>EOSC</td>
+<td>0</td>
+<td>0</td>
+<td>RS2</td>
+<td>RS1</td>
+<td>INTCN</td>
+<td>A2IE</td>
+<td>A1IE</td>
+<td>Control</td>
+<td>—</td>
+</tr>
+<tr>
+<td>0Fh</td>
+<td>OSF</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>A2F</td>
+<td>A1F</td>
+<td>Status</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+
+  </body>
+</html>
