@@ -1,7 +1,18 @@
-<!DOCTYPEhtml>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Timekeeping Registers</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>
+
+    <script>
+      $(function() { $( "#accordion" ).accordion(); });
+    </script>
+
+    <style>table { width: 100% }</style>
   </head>
   <body>
 
@@ -9,7 +20,11 @@
 
 <p><a href="http://para.maxim-ic.com/en/search.mvp?fam=rtc&374=I%3Csup%3E2%3C/sup%3EC&tree=timers">All Maxim/DS RTCs</a></p>
 
-<h2>DS1307</h2>
+<div id="accordion">
+
+<h3 class="head"><a href="#">DS1307</a></h3>
+
+<div>
 <p><a href="http://datasheets.maxim-ic.com/en/ds/DS1307.pdf">Datasheet</a></p>
 
 <table border="1" class="docutils">
@@ -117,11 +132,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 
-<hr />
+<h3><a href="#">DS1337</a></h3>
 
-<h2>DS1337</h2>
-
+<div>
 <p><a href="http://datasheets.maxim-ic.com/en/ds/DS1337-DS1337C.pdf">Datasheet</a></p>
 
 <table border="1" class="docutils">
@@ -326,6 +341,9 @@
 </tr>
 </tbody>
 </table>
+</div>
+
+</div>
 
   </body>
 </html>
