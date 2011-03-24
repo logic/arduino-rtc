@@ -1,16 +1,18 @@
+Device model overview.
+
 DS
 --
-DS(uint8_t slaveAddress=DSRTC_SLAVE_ADDRESS);
-uint8_t read(uint8_t addr);
-void read(uint8_t addr, uint8_t len, uint8_t * buffer);
-void write(uint8_t addr, uint8_t val);
-void write(uint8_t addr, uint8_t len, uint8_t * buffer);
+    DS(uint8_t slaveAddress=DSRTC_SLAVE_ADDRESS);
+    uint8_t read(uint8_t addr);
+    void read(uint8_t addr, uint8_t len, uint8_t * buffer);
+    void write(uint8_t addr, uint8_t val);
+    void write(uint8_t addr, uint8_t len, uint8_t * buffer);
 
 Time
 ----
-Time(uint8_t startAddr=0x00);
-time_t time();
-void setTime(time_t t);
+    Time(uint8_t startAddr=0x00);
+    time_t time();
+    void setTime(time_t t);
 
 Rather than time_t, might be more appropriate to represent time in a
 more hardware-representative way, and provide convenience functions for
@@ -20,12 +22,12 @@ cause problems.
 
 Alarm
 -----
-Alarm(uint8_t startAddr=0x07);
-time_t alarm(uint8_t alarmNum);
+    Alarm(uint8_t startAddr=0x07);
+    time_t alarm(uint8_t alarmNum);
 
 Trickle Charger
 ---------------
-TrickleCharger();
+    TrickleCharger();
 
 Elapsed Time
 ------------
@@ -35,8 +37,8 @@ Watchdog
 
 NV SRAM
 -------
-RAM(uint8_t startAddr, uint8_t len);
-uint8_t& operator[] (uint8_t t);
+    RAM(uint8_t startAddr, uint8_t len);
+    uint8_t& operator[] (uint8_t t);
 
 FRAM/EEPROM
 -----------
