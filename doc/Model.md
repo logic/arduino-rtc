@@ -60,7 +60,6 @@ Alarm
 
 Trickle Charger
 ---------------
-    TrickleCharger();
 
 Elapsed Time
 ------------
@@ -80,12 +79,21 @@ NV SRAM
     RAM(uint8_t startAddr, uint8_t len);
     uint8_t& operator[] (uint8_t t);
 
+While this might be a bit confusing to a new programmer, accessing
+built-in memory using array subscript notation will be familiar to
+existing programmers, and may serve as a soft introduction to the
+topic for newcomers.
+
 FRAM/EEPROM
 -----------
+Need to think on this more; it is tempting to roll SRAM, FRAM, and EEPROM
+access into the same interface, as none of the DS RTC devices present
+multiple options here. EEPROM access is significantly different under the
+hood (access is actually against a completely different slave address),
+but I remain unconvinced that the user should be exposed to that.
 
 Per-device classes
 ------------------
-
 Each inherits a combination of the base classes above, calling the base
 class constructor to configure it as appropriate for the specific device.
 User instantiates the class for the chip they actually have; this allows
