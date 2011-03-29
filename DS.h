@@ -6,11 +6,6 @@
 // Slave address (commmon to all Dallas Semiconductor/Maxim RTCs)
 #define DSRTC_SLAVE_ADDRESS 0x68
 
-// Base slave address for EEPROM/FRAM (common to all chips)
-// Bit 0x01 is 1 for read, 0 for write.
-// Bits 0x02/0x04/0x08 indicate memory page on DS32B35 (0 on DS32C35).
-#define DSRTC_FRAM_BASE_ADDRESS 0xA0
-
 // Convert BCD (binary-coded decimal) to decimal, and vice-versa
 // Borrowed from Plan9.
 #define bcd2dec(bcd) (((((bcd)>>4) & 0x0F) * 10) + ((bcd) & 0x0F))
