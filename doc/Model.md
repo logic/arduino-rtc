@@ -68,6 +68,13 @@ Elapsed Time
 Watchdog
 --------
 
+Temperature
+-----------
+    Temp(uint8_t startReg=0x11);
+    int getTemperature();
+
+Provides a celciusToFahrenheit() convenience macro.
+
 NV SRAM
 -------
     RAM(uint8_t startAddr, uint8_t len);
