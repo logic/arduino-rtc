@@ -11,19 +11,20 @@
 #define bcd2dec(bcd) (((((bcd)>>4) & 0x0F) * 10) + ((bcd) & 0x0F))
 #define dec2bcd(dec) ((((dec)/10)<<4)|((dec)%10))
 
-class DS {
+class DSI2C {
   public:
-    DS() : slaveAddress(DSRTC_SLAVE_ADDRESS) { Wire.begin(); };
+    static void begin() { Wire.begin(); };
 
     // Raw register read/write methods
-    uint8_t readRegister(uint8_t addr);
-    void readRegister(uint8_t addr, uint8_t len, uint8_t * buffer);
-
-    void writeRegister(uint8_t addr, uint8_t val);
-    void writeRegister(uint8_t addr, uint8_t len, uint8_t * buffer);
+    static uint8_t readRegister(uint8_t addr);
+    static void readRegister(uint8_t addr, uint8_t len, uint8_t * buffer);
+    static void writeRegister(uint8_t addr, uint8_t val);
+    static void writeRegister(uint8_t addr, uint8_t len, uint8_t * buffer);
 
   private:
-    uint8_t slaveAddress;
+    static uint8_t slaveAddress;
 };
 
-#endif // __DSRTC_H
+extern DSI2C RTCI2C;
+
+#endif // __DS_H

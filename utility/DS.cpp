@@ -1,11 +1,13 @@
 #include "DS.h"
 
+uint8_t DSI2C::slaveAddress = DSRTC_SLAVE_ADDRESS;
+
 /**
  * Read the value at the given register address.
  * @param addr the register address to read
  * @return The register value.
  */
-uint8_t DS::readRegister(uint8_t addr) {
+uint8_t DSI2C::readRegister(uint8_t addr) {
   Wire.beginTransmission(slaveAddress);
   Wire.send(addr);
   Wire.endTransmission();
@@ -19,7 +21,7 @@ uint8_t DS::readRegister(uint8_t addr) {
  * @param len the number of bytes to read
  * @param buffer a buffer to read the register values into
  */
-void DS::readRegister(uint8_t addr, uint8_t len, uint8_t * buffer) {
+void DSI2C::readRegister(uint8_t addr, uint8_t len, uint8_t * buffer) {
   Wire.beginTransmission(slaveAddress);
   Wire.send(addr);
   Wire.endTransmission();
@@ -32,7 +34,7 @@ void DS::readRegister(uint8_t addr, uint8_t len, uint8_t * buffer) {
  * @param addr the register address to write to
  * @param val the value to write to the given register
  */
-void DS::writeRegister(uint8_t addr, uint8_t val) {
+void DSI2C::writeRegister(uint8_t addr, uint8_t val) {
   Wire.beginTransmission(slaveAddress);
   Wire.send(addr);
   Wire.send(val);
@@ -45,9 +47,11 @@ void DS::writeRegister(uint8_t addr, uint8_t val) {
  * @param len the number of values to write
  * @param buffer a buffer containing the values to write
  */
-void DS::writeRegister(uint8_t addr, uint8_t len, uint8_t * buffer) {
+void DSI2C::writeRegister(uint8_t addr, uint8_t len, uint8_t * buffer) {
   Wire.beginTransmission(slaveAddress);
   Wire.send(addr);
   while (len-- > 0) Wire.send((*buffer++));
   Wire.endTransmission();
 }
+
+DSI2C RTCI2C = DSI2C();

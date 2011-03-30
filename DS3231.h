@@ -1,9 +1,13 @@
 #ifndef __DS3231_H
 #define __DS3231_H
 
-#include "DSTemp.h"
+#include "utility/DSTemp.h"
 
-class DS3231 : public DSTemp { };
+class DS3231 : public DSTemp {
+  public:
+    DS3231() : rtc(DS()) { };
+  private:
+    DS& rtc;
 
 DS3231 RTC = DS3231();
 
